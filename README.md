@@ -1,8 +1,8 @@
-# Fabric Pulse
+# Compliance Hub
 
-Fabric Pulse is a production-ready Next.js dashboard for IP Fabric network compliance monitoring, developed by **Daniel Rieger and Vincent Sampieri**. It supports multiple security frameworks with snapshot comparison and delta scoring.
+Compliance Hub is a production-ready Next.js dashboard for IP Fabric network compliance monitoring, developed by **Daniel Rieger and Vincent Sampieri**. It supports multiple security frameworks with snapshot comparison and delta scoring.
 
-![Fabric Pulse UI](src/images/fabric_pulse_ui.png)
+![Compliance Hub UI](src/images/fabric_pulse_ui.png)
 
 ## Features
 
