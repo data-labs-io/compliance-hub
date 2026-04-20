@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  # Next.js application - simplified for easy deployment
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: compliance-dashboard
+    ports:
+      - "3000:80"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - NEXTAUTH_URL=${NEXTAUTH_URL:-http://localhost:3000}
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+      - IPF_API_URL=${IPF_API_URL}
+      - IPF_API_TOKEN=${IPF_API_TOKEN}
+      - IS_IPF_EXTENSION=${IS_IPF_EXTENSION:-false}
+    restart: unless-stopped

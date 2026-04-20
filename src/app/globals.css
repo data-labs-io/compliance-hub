@@ -1,0 +1,214 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* IP Fabric Brand Colors */
+    --ipf-green: 158 84% 39%;        /* #22C55E - Primary CTA green */
+    --ipf-green-hover: 158 84% 35%;  /* Darker green for hover */
+    --ipf-blue: 206 96% 52%;         /* #0EA5E9 - Secondary blue */
+    --ipf-magenta: 328 85% 60%;      /* #EC4899 - Accent magenta/pink for icons */
+    --ipf-purple: 271 81% 56%;       /* #8B5CF6 - Additional purple accent */
+
+    /* Okabe-Ito Accessible Palette (for colorblind mode) */
+    --acc-orange: #E69F00;
+    --acc-sky-blue: #56B4E9;
+    --acc-bluish-green: #009E73;
+    --acc-yellow: #F0E442;
+    --acc-blue: #0072B2;
+    --acc-vermilion: #D55E00;
+    --acc-purple: #CC79A7;
+    --acc-grey: #999999;
+
+    /* Backgrounds */
+    --background: 0 0% 100%;          /* Pure white background */
+    --foreground: 222 47% 11%;        /* Dark text on light bg */
+    --card: 0 0% 100%;                /* White cards */
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* IP Fabric Primary - Green for buttons/CTAs */
+    --primary: 158 84% 39%;           /* #22C55E */
+    --primary-foreground: 0 0% 100%;  /* White text on green */
+
+    /* Secondary - Blue */
+    --secondary: 206 96% 52%;         /* #0EA5E9 */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Accent - Magenta for icons/highlights */
+    --accent: 328 85% 60%;            /* #EC4899 */
+    --accent-foreground: 0 0% 100%;
+
+    /* Semantic Colors */
+    --success: 158 84% 39%;           /* Same as primary green */
+    --info: 206 96% 52%;              /* Blue for info */
+    --warning: 38 92% 50%;            /* Orange */
+    --destructive: 0 84% 60%;         /* Red */
+    --destructive-foreground: 0 0% 98%;
+
+    /* Neutral Colors */
+    --muted: 210 40% 96%;             /* Light gray backgrounds */
+    --muted-foreground: 215 16% 47%;  /* Muted text */
+
+    /* Borders and Inputs */
+    --border: 214 32% 91%;            /* Light gray borders */
+    --input: 214 32% 91%;
+    --ring: 158 84% 39%;              /* Green focus ring */
+
+    --radius: 0.5rem;
+  }
+
+  /* Colorblind Mode - Okabe-Ito Palette Override */
+  body.colorblind-mode {
+    /* Override semantic colors with accessible alternatives */
+    --success: 162 100% 31%;          /* Bluish-green #009E73 */
+    --info: 202 100% 35%;             /* Blue #0072B2 */
+    --warning: 41 100% 45%;           /* Orange #E69F00 */
+    --destructive: 21 100% 42%;       /* Vermilion #D55E00 */
+  }
+
+  .dark {
+    /* Following dark-mode-guidelines.md */
+    /* Base background: #121212 (not pure black to avoid OLED smearing) */
+    --background: 0 0% 7%;
+    /* Text high emphasis: 87% white opacity */
+    --foreground: 0 0% 87%;
+
+    /* Card/Surface 1: #1E1E1E (5% white overlay for elevation) */
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 87%;
+
+    /* Modal/Surface 2: #2C2C2C (8-12% white overlay) */
+    --popover: 0 0% 17%;
+    --popover-foreground: 0 0% 87%;
+
+    /* Desaturated primary (blue-500 → blue-200 range) */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Desaturated secondary (lighter, less saturated) */
+    --secondary: 206 70% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Desaturated accent */
+    --accent: 328 50% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Error: Soft Salmon instead of pure red (#CF6679) */
+    --destructive: 0 60% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Muted: Slightly lighter for better readability */
+    --muted: 0 0% 15%;
+    /* Text medium emphasis: 60% white opacity */
+    --muted-foreground: 0 0% 60%;
+
+    /* Borders: Subtle gray */
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* IP Fabric Specific Classes */
+@layer components {
+  /* Primary Green Button Style */
+  .ipf-button-primary {
+    @apply bg-green-500 hover:bg-green-600 text-white rounded-lg px-6 py-3 font-medium transition-colors;
+  }
+
+  /* Secondary Blue Elements */
+  .ipf-secondary {
+    @apply text-sky-500 hover:text-sky-600;
+  }
+
+  /* Magenta Accent for Icons */
+  .ipf-accent-icon {
+    @apply text-pink-500;
+  }
+
+  /* Card with subtle shadow (IP Fabric style) */
+  .ipf-card {
+    @apply bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-100;
+  }
+
+  /* Typography matching IP Fabric */
+  .ipf-heading {
+    @apply text-gray-900 font-semibold;
+  }
+
+  .ipf-text {
+    @apply text-gray-600;
+  }
+
+  /* Gradient for special elements */
+  .ipf-gradient {
+    background: linear-gradient(135deg, #22C55E 0%, #0EA5E9 100%);
+  }
+
+  /* Light background sections */
+  .ipf-section {
+    @apply bg-gray-50 rounded-xl p-6;
+  }
+
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  /* Metric card animation */
+  .metric-card {
+    @apply transform transition-all duration-200 hover:scale-105 hover:-translate-y-1;
+  }
+
+  /* Colorblind Mode - Accessible Color Utilities */
+  /* These classes override standard Tailwind colors when colorblind mode is active */
+
+  /* Success/Positive - Bluish Green #009E73 */
+  body.colorblind-mode .cb-success {
+    color: var(--acc-bluish-green) !important;
+  }
+  body.colorblind-mode .cb-bg-success {
+    background-color: var(--acc-bluish-green) !important;
+  }
+
+  /* Warning - Orange #E69F00 */
+  body.colorblind-mode .cb-warning {
+    color: var(--acc-orange) !important;
+  }
+  body.colorblind-mode .cb-bg-warning {
+    background-color: var(--acc-orange) !important;
+  }
+
+  /* Error/Negative - Vermilion #D55E00 */
+  body.colorblind-mode .cb-error {
+    color: var(--acc-vermilion) !important;
+  }
+  body.colorblind-mode .cb-bg-error {
+    background-color: var(--acc-vermilion) !important;
+  }
+
+  /* Info/Improvement - Sky Blue #56B4E9 */
+  body.colorblind-mode .cb-info {
+    color: var(--acc-sky-blue) !important;
+  }
+  body.colorblind-mode .cb-bg-info {
+    background-color: var(--acc-sky-blue) !important;
+  }
+
+  /* Neutral - Grey #999999 */
+  body.colorblind-mode .cb-neutral {
+    color: var(--acc-grey) !important;
+  }
+}

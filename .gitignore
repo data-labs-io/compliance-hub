@@ -1,0 +1,77 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+.env.development
+.env.test
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Documentation and development files
+*.md
+!README.md
+!design.md
+!IPF_EXTENSION_GUIDE.md
+!NEXT_STEPS.md
+!progress*.md
+!CLAUDE.md
+!FRAMEWORK_IMPLEMENTATION_GUIDE*.md
+*.pdf
+*.docx
+claude_config.json
+.claude/
+start-mcp-docker.mjs
+ssl/
+nul
+design-system/
+
+# OS files
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Logs
+logs/
+*.log
+
+# Cache
+.cache/
+.temp/
+.tmp/dist/*.zip 
+dist/ 
