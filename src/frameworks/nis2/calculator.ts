@@ -294,13 +294,12 @@ async function fetchBatch1Metrics(
     metrics.configurationCountReason = 'Configuration endpoint not accessible'
   }
 
-  // ACL Policy count (active)
+  // ACL Policy count
   try {
     const aclResponse = await apiCall('tables/security/acl', {
       method: 'POST',
       body: {
         columns: ['hostname', 'name', 'active'],
-        filters: { active: ['neq', 0] },
         snapshot: snapshotId,
         pagination: { limit: 5000, start: 0 }
       }
