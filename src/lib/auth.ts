@@ -104,7 +104,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
           // Try multiple API versions and endpoints
           let response: Response | null = null
-          const versions = ['v7.0', 'v6.9', 'v6.8', 'v6.7', 'v6.6', 'v6.5', 'v6.4', 'v6.3', 'v6.2', 'v6.1', 'v6.0', 'v5.0']
+          const versions = ['', 'v8.0', 'v7.0', 'v6.9', 'v6.8', 'v6.7', 'v6.6', 'v6.5', 'v6.4', 'v6.3', 'v6.2', 'v6.1', 'v6.0', 'v5.0']
           let lastError = null
 
           // First, try a simple API test to see if we can connect at all
@@ -123,7 +123,8 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
 
           for (const version of versions) {
             try {
-              const testUrl = `${baseUrl}/api/${version}/os/version`
+              const versionPart = version ? `${version}/` : ''
+              const testUrl = `${baseUrl}/api/${versionPart}os/version`
               console.log(`Trying IP Fabric API ${version} at:`, testUrl)
 
               response = await fetch(testUrl, {
