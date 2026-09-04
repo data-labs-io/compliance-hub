@@ -88,8 +88,8 @@ export async function GET(req: NextRequest) {
       // Try cached API version first, then fall back to probing
       const cachedVersion = apiVersionCache.get(apiUrl)
       const versions = cachedVersion
-        ? [cachedVersion, '', 'v7.8', 'v7.7', 'v7.6', 'v7.5', 'v7.4', 'v7.3', 'v7.2', 'v7.1', 'v7.0', 'v6.9', 'v6.8', 'v6.7', 'v6.6', 'v6.5', 'v6.4', 'v6.3'].filter((v, i, arr) => arr.indexOf(v) === i)
-        : ['', 'v7.8', 'v7.7', 'v7.6', 'v7.5', 'v7.4', 'v7.3', 'v7.2', 'v7.1', 'v7.0', 'v6.9', 'v6.8', 'v6.7', 'v6.6', 'v6.5', 'v6.4', 'v6.3']
+        ? [cachedVersion, '', 'v8.0', 'v7.8', 'v7.7', 'v7.6', 'v7.5', 'v7.4', 'v7.3', 'v7.2', 'v7.1', 'v7.0', 'v6.9', 'v6.8', 'v6.7', 'v6.6', 'v6.5', 'v6.4', 'v6.3'].filter((v, i, arr) => arr.indexOf(v) === i)
+        : ['', 'v8.0', 'v7.8', 'v7.7', 'v7.6', 'v7.5', 'v7.4', 'v7.3', 'v7.2', 'v7.1', 'v7.0', 'v6.9', 'v6.8', 'v6.7', 'v6.6', 'v6.5', 'v6.4', 'v6.3']
 
       let response: Response | null = null
       let lastErrorData = null
@@ -292,7 +292,7 @@ export async function GET(req: NextRequest) {
         console.log('Standard endpoint failed, trying table endpoint')
 
         // Try newest table endpoint first for newer instances
-        const tableVersions = ['', 'v7.8', 'v7.7', 'v7.6', 'v7.5', 'v7.4', 'v7.3', 'v7.2', 'v7.1', 'v7.0', 'v6.9', 'v6.8', 'v6.7']
+        const tableVersions = ['', 'v8.0', 'v7.8', 'v7.7', 'v7.6', 'v7.5', 'v7.4', 'v7.3', 'v7.2', 'v7.1', 'v7.0', 'v6.9', 'v6.8', 'v6.7']
 
         for (const tableVersion of tableVersions) {
           const tableUrl = tableVersion ? `${apiUrl}/api/${tableVersion}/tables/management/snapshots` : `${apiUrl}/api/tables/management/snapshots`

@@ -4,7 +4,7 @@ import { isExtensionMode, getExtensionCredentials, getAuthHeader } from '@/lib/e
 import { serverVersionCache } from '@/lib/api-version-cache-server'
 
 // Supported API versions in order of preference (newest to oldest)
-const API_VERSIONS = ['', 'v7.8', 'v7.7', 'v7.6', 'v7.5', 'v7.4', 'v7.3', 'v7.2', 'v7.1', 'v7.0', 'v6.9', 'v6.8', 'v6.7', 'v6.6', 'v6.5', 'v6.4', 'v6.3']
+const API_VERSIONS = ['', 'v8.0', 'v7.0', 'v6.9', 'v6.8', 'v6.7', 'v6.6', 'v6.5', 'v6.4', 'v6.3', 'v6.2', 'v6.1', 'v6.0', 'v5.0']
 
 // Rate limiting - simple in-memory store (consider Redis for production)
 const rateLimitStore = new Map<string, { count: number; resetTime: number }>()
