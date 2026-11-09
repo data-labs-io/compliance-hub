@@ -1,5 +1,6 @@
 const nextConfig = {
   output: 'standalone',
+  outputFileTracingRoot: __dirname,
   reactStrictMode: true,
 
   // Use assetPrefix only when running as an IP Fabric extension
