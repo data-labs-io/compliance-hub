@@ -37,7 +37,7 @@ docker-compose up -d
 When deployed as an IP Fabric extension, the dashboard automatically detects credentials from the platform. 
 
 The extension package can be found in the `dist` folder:
-- **`dist/fabric-pulse-extension.zip`**: This is the ZIP package that can be uploaded directly to the IP Fabric platform to load the extension.
+- **`dist/compliance-hub-extension.zip`**: This is the ZIP package that can be uploaded directly to the IP Fabric platform to load the extension.
 
 To generate a new package, run:
 ```bash
