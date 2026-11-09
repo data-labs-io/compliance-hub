@@ -106,8 +106,8 @@ echo -e "${BLUE}╚════════════════════�
 echo ""
 echo -e "${GREEN}IP Fabric extension (Docker Zip):${NC}"
 echo "  Upload ${ZIP_FILE} in IP Fabric: Settings > Extensions > Add,"
-echo "  choose type 'Docker Zip', and set the slug to 'fabric-pulse'"
-echo "  (must match assetPrefix '/extensions-apps/fabric-pulse' in next.config.js)."
+echo "  choose type 'Docker Zip', and set the slug to 'compliance-hub'"
+echo "  (must match IPF_EXTENSION_SLUG baked into assetPrefix in next.config.js)."
 echo ""
 
 if [ "$BUILD_IMAGE" = true ]; then
