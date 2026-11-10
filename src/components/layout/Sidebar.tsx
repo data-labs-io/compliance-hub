@@ -579,7 +579,7 @@ export function Sidebar() {
         {!isCollapsed && (
           <div className="border-t dark:border-gray-800 pt-4">
             <p className="text-xs text-gray-500 dark:text-gray-400">
-              Compliance Hub v1.1 © 2026
+              Compliance Hub v1.2 © 2026
             </p>
             <p className="text-[10px] text-gray-400 dark:text-gray-500 mt-1">
               Developed by Vincent Sampieri and Daniel Rieger
