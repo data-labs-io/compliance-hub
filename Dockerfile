@@ -11,6 +11,11 @@ COPY . .
 # Ensure we have enough memory and correct flags for the Next.js build
 ENV IS_IPF_EXTENSION=true
 ENV NODE_OPTIONS=--max-old-space-size=2048
+# assetPrefix is baked in here. IPF_EXTENSION_SLUG MUST match the slug the
+# extension is deployed under in IP Fabric ("/extensions-apps/<slug>").
+# Override with: docker build --build-arg IPF_EXTENSION_SLUG=<slug> .
+ARG IPF_EXTENSION_SLUG=compliance-hub
+ENV IPF_EXTENSION_SLUG=$IPF_EXTENSION_SLUG
 RUN npm run build
 
 # Production stage
